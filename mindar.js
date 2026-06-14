@@ -49,13 +49,13 @@ const setup = async () => {
     
     avatar = new Loader();
     await avatar.init('./venetim.glb');
-    avatar.gltf.scene.rotation.x = 90;
+    avatar.gltf.scene.rotation.x = Math.PI / 2;
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     anchor.group.add(avatar.gltf.scene);
 
     mask = new Loader();
     await mask.init('./mask.glb');
-    mask.gltf.scene.rotation.x = 90;
+    mask.gltf.scene.rotation.x = Math.PI / 2;
     mask.gltf.scene.scale.set(0.7, 0.7, 0.7);
     mask.gltf.scene.traverse((object) => {
         if(object.isMesh) { 
