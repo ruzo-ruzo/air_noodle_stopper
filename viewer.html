@@ -5,12 +5,11 @@
     {
       "imports": {
         "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-        "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
       }
     }
     </script>
-    <script type="module" src="./mindar.js"></script>
+    <script type="module" src="./viewer.js"></script>
     <style>
         body {
             margin: 0;
@@ -24,6 +23,6 @@
     </style>
   </head>
   <body>
-    <div id="container"></div>
+    <canvas id="container"></canvas>
   </body>
 </html>

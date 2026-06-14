@@ -2,13 +2,13 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 import { MindARThree } from 'mindar-image-three';
-class Avatar {
+
+class Loader {
     constructor() {
       this.gltf = null;
       this.morphTargetMeshes = [];
     }
-    async init() {
-        const url = './benetim.glb';
+    async init(url) {
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath('./draco_decoder/');
         const gltf = await new Promise((resolve) => {
@@ -20,34 +20,52 @@ class Avatar {
         });
         if (gltf.animations && gltf.animations.length > 1) {
           this.mixer = new THREE.AnimationMixer(gltf.scene);
-          this.action = this.mixer.clipAction(gltf.animations[1]);
+          this.action = this.mixer.clipAction(gltf.animations[0]);
         }
       this.gltf = gltf;
     }
-
 }
+
 let mindarThree = null;
 let avatar = null;
+let mask = null;
 let clock = null;
+
 const setup = async () => {
     mindarThree = new MindARThree({
         container: document.querySelector("#container"),
-        imageTargetSrc: "./targets.mind",
+        imageTargetSrc: "./marker.mind",
         filterMinCF: 0.0001,
         filterBeta: 0.001,
     });
-    const { renderer, scene, camera } = mindarThree;
+    const { renderer, scene, camera } = mindarThree;    
+    const anchor = mindarThree.addAnchor(0);
+
     const amb_light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
     scene.add(amb_light);
     const main_light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    main_light.position.set(1, -2, 5);
+    main_light.position.set(1, 3, 5);
     scene.add(main_light);
-    const anchor = mindarThree.addAnchor(0);
-    avatar = new Avatar();
-    await avatar.init();
-    avatar.gltf.scene.scale.set(1, 1, 1);
+    
+    avatar = new Loader();
+    await avatar.init('./venetim.glb');
+    avatar.gltf.scene.rotation.x = 90;
+    avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     anchor.group.add(avatar.gltf.scene);
+
+    mask = new Loader();
+    await mask.init('./mask.glb');
+    mask.gltf.scene.rotation.x = 90;
+    mask.gltf.scene.scale.set(0.7, 0.7, 0.7);
+    mask.gltf.scene.traverse((object) => {
+        if(object.isMesh) { 
+            object.material.colorWrite = false;
+            object.renderOrder = -1;
+        }
+    });
+    anchor.group.add(mask.gltf.scene);
 }
+
 const start = async () => {
     if (!mindarThree) {
         await setup();
