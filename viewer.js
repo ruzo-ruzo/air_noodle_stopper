@@ -20,7 +20,8 @@ class Loader {
         });
         if (gltf.animations && gltf.animations.length > 1) {
           this.mixer = new THREE.AnimationMixer(gltf.scene);
-          this.action = this.mixer.clipAction(gltf.animations[0]);
+          this.clip = THREE.AnimationClip.findByName(gltf.animations, 'Wait');
+          this.action = this.mixer.clipAction(this.clip);
         }
       this.gltf = gltf;
     }
