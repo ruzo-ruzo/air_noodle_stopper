@@ -20,9 +20,8 @@ class Loader {
         });
         if (gltf.animations && gltf.animations.length > 1) {
             this.mixer = new THREE.AnimationMixer(gltf.scene);
-            this.animations = gltf.animations;
             this.actions = {};
-            this.animations.forEach((animation) => {
+            gltf.animations.forEach((animation) => {
                 const action = this.mixer.clipAction(animation);
                 this.actions[animation.name] = action;
                 action.setLoop(THREE.LoopOnce);
@@ -85,9 +84,13 @@ const start = async () => {
     }
     await mindarThree.start();
     const { renderer, scene, camera } = mindarThree;
+    const actions = avatar.actions;
     clock = new THREE.Clock();
-    // ↓初めてターゲットを読み込んだ時にアニメーションを開始する
-    anchor.onTargetFound = () => { renderer.setAnimationLoop(animation_update) };
+    renderer.setAnimationLoop(animation_update);
+    // ↓ターゲットを認識した時にアニメーションを初期化する
+    anchor.onTargetFound = () => {
+        Object.keys(actions).forEach((name) => { actions[name].enabled = false; });
+    }
 }
 
 const animation_update = () => {
@@ -103,8 +106,8 @@ const animation_update = () => {
         let next_action_name = get_next_action_name(current_name);
         const next_action = avatar.actions[next_action_name];
         next_action.enabled = true;
-        next_action.paused = false;
         next_action.reset();
+        console.log(next_action.time);
         next_action.play();
     }
     if (mixer) mixer.update(delta);
@@ -125,7 +128,7 @@ const get_next_action_name = (current_name) => {
         }
     } else {
         // 初回
-        return 'Wait';
+        return 'FallBase';
     }
 }
 

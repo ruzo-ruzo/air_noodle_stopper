@@ -20,9 +20,8 @@ class Loader {
         });
         if (gltf.animations && gltf.animations.length > 1) {
             this.mixer = new THREE.AnimationMixer(gltf.scene);
-            this.animations = gltf.animations;
             this.actions = {};
-            this.animations.forEach((animation) => {
+            gltf.animations.forEach((animation) => {
                 const action = this.mixer.clipAction(animation);
                 this.actions[animation.name] = action;
                 action.setLoop(THREE.LoopOnce);
@@ -33,7 +32,6 @@ class Loader {
         this.gltf = gltf;
     }
 }
-
 let mask = null;
 let mindarThree = null;
 let avatar = null;
@@ -60,7 +58,7 @@ const setup = async () => {
     
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(75, windowWidth / windowHeight, 0.1, 1000);
-    camera.position.set(1, 1, 0);
+    camera.position.set(2, 2, 0);
     camera.lookAt(0, 0, 0);
     camera.zoom = 3;
 
@@ -103,9 +101,6 @@ const start = async () => {
 }
 
 const animation_update = () => {
-    const { renderer, scene, camera } = mindarThree;
-    const mixer = avatar.mixer;
-    const delta = clock.getDelta();
     const action_names = Object.keys(avatar.actions);
     const current_name = action_names.find(action => avatar.actions[action].enabled);
     const current_action = avatar.actions[current_name];
@@ -115,11 +110,12 @@ const animation_update = () => {
         let next_action_name = get_next_action_name(current_name);
         const next_action = avatar.actions[next_action_name];
         next_action.enabled = true;
-        next_action.paused = false;
         next_action.reset();
         next_action.play();
     }
-    if (mixer) mixer.update(delta);
+    const mixer = avatar.mixer;
+    if (mixer) mixer.update(clock.getDelta());
+    const { renderer, scene, camera } = mindarThree;
     renderer.render(scene, camera);
 }
 
@@ -137,7 +133,7 @@ const get_next_action_name = (current_name) => {
         }
     } else {
         // 初回
-        return 'Wait';
+        return 'FallBase';
     }
 }
 
