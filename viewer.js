@@ -18,7 +18,7 @@ class Loader {
                 resolve(gltf);
             });
         });
-        if (gltf.animations && gltf.animations.length > 1) {
+        if (gltf.animations) {
             this.mixer = new THREE.AnimationMixer(gltf.scene);
             this.actions = {};
             gltf.animations.forEach((animation) => {
@@ -104,7 +104,7 @@ const animation_update = () => {
     const action_names = Object.keys(avatar.actions);
     const current_name = action_names.find(action => avatar.actions[action].enabled);
     const current_action = avatar.actions[current_name];
-    const is_first_time = !action_names.some(name => avatar.actions[name].enabled);
+    const is_first_time = !current_name;
     if ( is_first_time || current_action.paused) {
         if (current_action) current_action.enabled = false;
         let next_action_name = get_next_action_name(current_name);
@@ -125,15 +125,16 @@ const get_next_action_name = (current_name) => {
             // Wait以外のアクションは連続させずWaitを挟む
             return 'Wait';
         } else {
-            const hit = Math.floor(Math.random() * 2 );
+            const hit = Math.floor(Math.random() * 3 );
             switch (hit) {
                 case 0: return 'Wave';
+                case 1: return 'Talk';
                 default: return 'Wait';
             }
         }
     } else {
         // 初回
-        return 'FallBase';
+        return 'Fall';
     }
 }
 
