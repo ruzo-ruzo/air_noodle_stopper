@@ -119,7 +119,7 @@ const get_next_action_name = (current_name) => {
             // Wait以外のアクションは連続させずWaitを挟む
             return 'Wait';
         } else {
-            const hit = Math.floor(Math.random() * 3 );
+            const hit = Math.floor(Math.random() * 5 );
             switch (hit) {
                 case 0: return 'Wave';
                 case 1: return 'Talk';
