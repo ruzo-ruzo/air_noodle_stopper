@@ -123,6 +123,7 @@ const get_next_action_name = (current_name) => {
             switch (hit) {
                 case 0: return 'Wave';
                 case 1: return 'Talk';
+                case 2: return 'Scroll';
                 default: return 'Wait';
             }
         }

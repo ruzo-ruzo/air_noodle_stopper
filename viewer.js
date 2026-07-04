@@ -60,7 +60,6 @@ const setup = async () => {
     const camera = new THREE.PerspectiveCamera(75, windowWidth / windowHeight, 0.1, 1000);
     camera.position.set(2, 2, 0);
     camera.lookAt(0, 0, 0);
-    camera.zoom = 3;
 
     // ライトの作成
     const amb_light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
@@ -129,6 +128,7 @@ const get_next_action_name = (current_name) => {
             switch (hit) {
                 case 0: return 'Wave';
                 case 1: return 'Talk';
+                case 2: return 'Scroll';
                 default: return 'Wait';
             }
         }
