@@ -10,7 +10,7 @@
 
 ## 使い方
 ### 1. まずマーカー画像を用意します。
-<picture><img src="./images/target.png" width="30%"></picture>
+<picture><img src="./images/target.png" width="50%"></picture>
 
 #### ロケッ党大集会3に参加の皆さま向け
 〇月〇日までファミリーマートのネットプリントで以下の番号もしくはQRコードからマーカー画像を印刷できます。  
