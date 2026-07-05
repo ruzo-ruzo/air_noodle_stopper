@@ -1,3 +1,9 @@
+---
+title: "エアヌードルストッパーの説明書"
+description: "Web ARおもちゃ"
+layout: default
+---
+
 # ベネティムのエアヌードルストッパー
 
 ## 注意!!
