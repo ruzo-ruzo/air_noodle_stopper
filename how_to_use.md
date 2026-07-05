@@ -24,7 +24,7 @@ layout: default
 をお選びください。それ以外の設定は触らなくて大丈夫です。
 
 #### 自分ちのプリンターで印刷する人向け
-<a href="./images/target.png"><img src="./images/target.png" width=30% />  
+<a href="./images/target.png"><img src="./images/target.png" width=30%>  
 このリンクから飛べる画像</a>を印刷してください。 
 サイズはL版（89mm×127mm）に収まるようにしてもらえると、カップ麺に乗せた際丁度いい大きさで奴が表示されます。  
 
