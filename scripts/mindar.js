@@ -59,14 +59,14 @@ const setup = async () => {
     
     // メインキャラクター設置
     avatar = new Loader();
-    await avatar.init('../models/venetim.glb');
+    await avatar.init('./models/venetim.glb');
     avatar.gltf.scene.rotation.x = Math.PI / 2;
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     anchor.group.add(avatar.gltf.scene);
 
     // マスク用メッシュ設置
     mask = new Loader();
-    await mask.init('../models/mask.glb');
+    await mask.init('./models/mask.glb');
     mask.gltf.scene.rotation.x = Math.PI / 2;
     mask.gltf.scene.scale.set(0.7, 0.7, 0.7);
     mask.gltf.scene.traverse((object) => {

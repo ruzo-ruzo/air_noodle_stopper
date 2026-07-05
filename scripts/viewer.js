@@ -76,14 +76,14 @@ const setup = async () => {
 
     // メインキャラクター設置
     avatar = new Loader();
-    await avatar.init('../models/venetim.glb');
+    await avatar.init('./models/venetim.glb');
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     scene.add(avatar.gltf.scene);　//MindMR側だとアンカーを追加してる部分
     avatar.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     
     //　以下本来はマスク用だがビューワでは表示する
     mask = new Loader();
-    await mask.init('../models/mask.glb');
+    await mask.init('./models/mask.glb');
     mask.gltf.scene.scale.set(0.7 ,0.7 ,0.7);
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
