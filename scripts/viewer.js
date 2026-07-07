@@ -1,7 +1,8 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/Addons.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
-import { OrbitControls } from 'three/addons/Addons.js';
+import { EXRLoader } from 'three/addons/loaders/EXRLoader';
 
 class Loader {
     constructor() {
@@ -50,23 +51,20 @@ const setup = async () => {
 
     // シーンの作成
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#555555');
-    
-    // 見やすいようにヘルパー（網目）を設定
-    let gridHelper = new THREE.GridHelper();
-    scene.add(gridHelper);
     
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(75, windowWidth / windowHeight, 0.1, 1000);
     camera.position.set(2, 2, 0);
     camera.lookAt(0, 0, 0);
-
-    // ライトの作成
-    const amb_light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-    scene.add(amb_light);
-    const main_light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    main_light.position.set(1, 3, 5);
-    scene.add(main_light);
+    
+    // 背景と環境光追加
+    renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderer.toneMappingExposure = 1;
+    new EXRLoader().load('./images/relax_inn_seaview_suite_1k.exr', (texture) => {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        scene.background = texture;
+        scene.environment = texture;
+    });
     
     // マウス制御
     const controls = new OrbitControls(camera, renderer.domElement);

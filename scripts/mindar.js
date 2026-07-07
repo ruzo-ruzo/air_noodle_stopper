@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
+import { EXRLoader } from 'three/addons/loaders/EXRLoader';
 import { MindARThree } from 'mindar-image-three';
 
 class Loader {
@@ -50,12 +51,13 @@ const setup = async () => {
     const { renderer, scene, camera } = mindarThree;    
     anchor = mindarThree.addAnchor(0);
 
-    // ライトの作成
-    const amb_light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-    scene.add(amb_light);
-    const main_light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    main_light.position.set(1, 3, 5);
-    scene.add(main_light);
+    // 環境光追加
+    renderer.toneMapping = THREE.ReinhardToneMapping;
+    renderer.toneMappingExposure = 1;
+    new EXRLoader().load('./images/relax_inn_seaview_suite_1k.exr', (texture) => {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        scene.environment = texture;
+    });
     
     // メインキャラクター設置
     avatar = new Loader();
