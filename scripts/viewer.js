@@ -62,8 +62,11 @@ const setup = async () => {
     renderer.toneMappingExposure = 1;
     new EXRLoader().load('./images/relax_inn_seaview_suite_1k.exr', (texture) => {
         texture.mapping = THREE.EquirectangularReflectionMapping;
-        scene.background = texture;
         scene.environment = texture;
+    });
+    new EXRLoader().load('./images/relax_inn_seaview_suite_4k.exr', (texture) => {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        scene.background = texture;
     });
     
     // マウス制御
