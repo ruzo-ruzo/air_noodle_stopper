@@ -108,7 +108,7 @@ const render_loading_screen = async () => {
     });
 }
 
-const initilize = async ([environment, background, character, mask]) => {
+const initilize = ([environment, background, character, mask]) => {
     const { renderer, scene, camera } = mindarThree;
     avatar = character;
 
@@ -134,15 +134,15 @@ const initilize = async ([environment, background, character, mask]) => {
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
 
-    // clock = new THREE.Clock();
+    clock = new THREE.Clock();
     // await renderer.compile(avatar.gltf.scene, camera, scene);
-    await renderer.init;
+    // await renderer.init()
 }
 
 const start = async () => {
     if (!mindarThree) setup();
     const { renderer, scene, camera } = mindarThree;
-    await initilize(await loading());
+    initilize(await loading());
     renderer.setAnimationLoop(animation_update);
 }
 
