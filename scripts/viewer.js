@@ -134,7 +134,7 @@ const initilize = ([environment, background, character, mask]) => {
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
     
-    renderer.setAnimationLoop(()=>{});
+    clock = new THREE.Clock();
 }
 
 const start = async () => {
