@@ -37,7 +37,6 @@ class SetGltf {
 
 let mindarThree = null;
 let avatar = null;
-let mask = null;
 let clock = null;
 let anchor = null;
 

@@ -38,7 +38,6 @@ class SetGltf {
 
 let mindarThree = null;
 let avatar = null;
-let mask = null;
 let clock = null;
 
 const setup = () => {
@@ -48,7 +47,7 @@ const setup = () => {
 
     // レンダラーの作成
     const canvas = document.getElementById('container');
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
     renderer.setSize(windowWidth, windowHeight);
     
     // カメラを作成
@@ -108,7 +107,7 @@ const render_loading_screen = async () => {
     });
 }
 
-const initilize = ([environment, background, character, mask]) => {
+const initilize = async ([environment, background, character, mask]) => {
     const { renderer, scene, camera } = mindarThree;
     avatar = character;
 
@@ -134,15 +133,14 @@ const initilize = ([environment, background, character, mask]) => {
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
 
+    // clockリセットかけたら開始アニメーションがずれない気がするが気のせいかもしれない
     clock = new THREE.Clock();
-    // await renderer.compile(avatar.gltf.scene, camera, scene);
-    // await renderer.init()
 }
 
 const start = async () => {
     if (!mindarThree) setup();
     const { renderer, scene, camera } = mindarThree;
-    initilize(await loading());
+    await initilize(await loading());
     renderer.setAnimationLoop(animation_update);
 }
 
