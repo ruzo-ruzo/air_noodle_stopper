@@ -106,6 +106,8 @@ const render_loading_screen = async () => {
         if (loading_model.mixer) loading_model.mixer.update(clock.getDelta());
         renderer.render(loading_scene, camera);
     });
+
+    clock = new THREE.Clock();
 }
 
 const initilize = ([environment, background, character, mask]) => {
@@ -133,8 +135,6 @@ const initilize = ([environment, background, character, mask]) => {
     mask.gltf.scene.scale.set(0.7 ,0.7 ,0.7);
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
-    
-    clock = new THREE.Clock();
 }
 
 const start = async () => {
