@@ -58,7 +58,6 @@ const setup = () => {
 }
 
 const loading = async () => {
-    // 実際のロード
     return await Promise.all([
         new EXRLoader().loadAsync('./images/relax_inn_seaview_suite_1k.exr'),
         new SetGltf('./models/venetim.glb').init(),
