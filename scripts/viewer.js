@@ -133,14 +133,13 @@ const initilize = ([environment, background, character, mask]) => {
     mask.gltf.scene.scale.set(0.7 ,0.7 ,0.7);
     mask.gltf.scene.rotation.y = Math.PI / 2; //カメラ位置へ向ける
     scene.add(mask.gltf.scene);
-    
-    clock = new THREE.Clock();
 }
 
 const start = async () => {
     if (!mindarThree) setup();
     const { renderer, scene, camera } = mindarThree;
     initilize(await loading());
+    renderer.render(scene, camera);
     renderer.setAnimationLoop(animation_update);
 }
 
