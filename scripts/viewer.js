@@ -107,7 +107,8 @@ const render_loading_screen = async () => {
         renderer.render(loading_scene, camera);
     });
 
-    clock = new THREE.Clock();
+    // clock = new THREE.Clock();
+    renderer.clear();
 }
 
 const initilize = ([environment, background, character, mask]) => {
