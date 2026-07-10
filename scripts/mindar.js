@@ -4,33 +4,34 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 import { EXRLoader } from 'three/addons/loaders/EXRLoader';
 import { MindARThree } from 'mindar-image-three';
 
-class Loader {
-    constructor() {
-      this.gltf = null;
-      this.morphTargetMeshes = [];
+class SetGltf {
+    constructor(url) {
+        this.url = url;
     }
-    async init(url, first_action_name) {
+    async init() {
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath('./scripts/draco_decoder/');
-        const gltf = await new Promise((resolve) => {
+        const gltf = new Promise((resolve) => {
             const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
-            loader.load(url, (gltf) => {
-                resolve(gltf);
+            loader.load(this.url, (gltf) => {
+                const wrapper = {};
+                if (gltf.animations) {
+                    wrapper.mixer = new THREE.AnimationMixer(gltf.scene);
+                    wrapper.actions = {};
+                    gltf.animations.forEach((animation) => {
+                        const action = wrapper.mixer.clipAction(animation);
+                        wrapper.actions[animation.name] = action;
+                        action.setLoop(THREE.LoopOnce);
+                        action.clampWhenFinished = true;
+                        action.enabled = false;
+                    });
+                }
+                wrapper.gltf = gltf;
+                resolve(wrapper);
             });
         });
-        if (gltf.animations) {
-            this.mixer = new THREE.AnimationMixer(gltf.scene);
-            this.actions = {};
-            gltf.animations.forEach((animation) => {
-                const action = this.mixer.clipAction(animation);
-                this.actions[animation.name] = action;
-                action.setLoop(THREE.LoopOnce);
-                action.clampWhenFinished = true;
-                action.enabled = false;
-            });
-        }
-        this.gltf = gltf;
+        return gltf;
     }
 }
 
@@ -40,7 +41,7 @@ let mask = null;
 let clock = null;
 let anchor = null;
 
-const setup = async () => {
+const setup = () => {
     // MindAR関係のセッティング
     mindarThree = new MindARThree({
         container: document.querySelector("#container"),
@@ -50,25 +51,35 @@ const setup = async () => {
     });
     const { renderer, scene, camera } = mindarThree;    
     anchor = mindarThree.addAnchor(0);
+    clock = new THREE.Clock();
 
-    // 環境光追加
     renderer.toneMapping = THREE.ReinhardToneMapping;
     renderer.toneMappingExposure = 1;
-    new EXRLoader().load('./images/relax_inn_seaview_suite_1k.exr', (texture) => {
-        texture.mapping = THREE.EquirectangularReflectionMapping;
-        scene.environment = texture;
-    });
+}
+
+const loading = async () => {
+    // 実際のロード
+    return await Promise.all([
+        new EXRLoader().loadAsync('./images/relax_inn_seaview_suite_1k.exr'),
+        new SetGltf('./models/venetim.glb').init(),
+        new SetGltf('./models/mask.glb').init(),
+    ])
+}
+
+const initilize = ([environment, character, mask]) => {
+    const { renderer, scene, camera } = mindarThree;
+    avatar = character;
     
-    // メインキャラクター設置
-    avatar = new Loader();
-    await avatar.init('./models/venetim.glb');
+    // 環境光
+    environment.mapping = THREE.EquirectangularReflectionMapping;
+    scene.environment = environment;
+
+    // メインキャラクター
     avatar.gltf.scene.rotation.x = Math.PI / 2;
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     anchor.group.add(avatar.gltf.scene);
 
-    // マスク用メッシュ設置
-    mask = new Loader();
-    await mask.init('./models/mask.glb');
+    //　マスク
     mask.gltf.scene.rotation.x = Math.PI / 2;
     mask.gltf.scene.scale.set(0.7, 0.7, 0.7);
     mask.gltf.scene.traverse((object) => {
@@ -80,14 +91,13 @@ const setup = async () => {
     anchor.group.add(mask.gltf.scene);
 }
 
+
 const start = async () => {
-    if (!mindarThree) {
-        await setup();
-    }
+    if (!mindarThree) setup();
     await mindarThree.start();
     const { renderer, scene, camera } = mindarThree;
+    initilize(await loading());
     const actions = avatar.actions;
-    clock = new THREE.Clock();
     renderer.setAnimationLoop(animation_update);
     // ↓ターゲットを認識した時にアニメーションを初期化する
     anchor.onTargetFound = () => {
@@ -97,8 +107,6 @@ const start = async () => {
 
 const animation_update = () => {
     const { renderer, scene, camera } = mindarThree;
-    const mixer = avatar.mixer;
-    const delta = clock.getDelta();
     const action_names = Object.keys(avatar.actions);
     const current_name = action_names.find(action => avatar.actions[action].enabled);
     const current_action = avatar.actions[current_name];
@@ -111,7 +119,7 @@ const animation_update = () => {
         next_action.reset();
         next_action.play();
     }
-    if (mixer) mixer.update(delta);
+    if (avatar.mixer) avatar.mixer.update(clock.getDelta());
     renderer.render(scene, camera);
 }
 
