@@ -135,7 +135,8 @@ const initilize = async ([environment, background, character, mask]) => {
     scene.add(mask.gltf.scene);
 
     // clock = new THREE.Clock();
-    await renderer.compile(avatar.gltf.scene, camera, scene);
+    // await renderer.compile(avatar.gltf.scene, camera, scene);
+    await renderer.init;
 }
 
 const start = async () => {
