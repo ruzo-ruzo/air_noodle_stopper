@@ -52,9 +52,6 @@ const setup = () => {
     
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(75, windowWidth / windowHeight, 0.1, 1000);
-
-    // マウス制御
-    const controls = new OrbitControls(camera, renderer.domElement);
  
     // シーンの作成
     const scene = new THREE.Scene();
@@ -122,6 +119,9 @@ const initilize = async ([environment, background, character, mask]) => {
     // 背景（MindAR版には不要）
     background.mapping = THREE.EquirectangularReflectionMapping;
     scene.background = background;
+
+    // マウス制御
+    const controls = new OrbitControls(camera, renderer.domElement);
 
     // メインキャラクター
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
