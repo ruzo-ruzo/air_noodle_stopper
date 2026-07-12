@@ -27,6 +27,8 @@ class SetGltf {
                         action.enabled = false;
                     });
                 }
+                gltf.scene.traverse((o)=> { o.frustumCulled = false; });
+                gltf.scene.frustumCulled = false;
                 wrapper.gltf = gltf;
                 resolve(wrapper);
             });
@@ -34,7 +36,6 @@ class SetGltf {
         return gltf;
     }
 }
-
 let mindarThree = null;
 let avatar = null;
 let clock = null;
