@@ -73,7 +73,7 @@ const initilize = ([environment, character, mask]) => {
     scene.environment = environment;
 
     // メインキャラクター
-    avatar.gltf.scene.rotation.x = Math.PI / 2;
+    avatar.gltf.scene.rotation.x = Math.PI / 2; // マーカーに垂直に立てる
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
     anchor.group.add(avatar.gltf.scene);
 
@@ -88,7 +88,6 @@ const initilize = ([environment, character, mask]) => {
     });
     anchor.group.add(mask.gltf.scene);
 }
-
 
 const start = async () => {
     if (!mindarThree) setup();

@@ -28,6 +28,8 @@ class SetGltf {
                         action.enabled = false;
                     });
                 }
+                gltf.scene.traverse((o)=> { o.frustumCulled = false; });
+                gltf.scene.frustumCulled = false;
                 wrapper.gltf = gltf;
                 resolve(wrapper);
             });
@@ -36,9 +38,19 @@ class SetGltf {
     }
 }
 
+const getPointerFromEvent = (event, renderer) => {
+    const pointer = new THREE.Vector2();
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    return pointer;
+}
+
 let mindarThree = null;
 let avatar = null;
+let mask = null;
 let clock = null;
+let raycaster = null;
 
 const setup = () => {
     // 画面サイズの取得
@@ -104,9 +116,10 @@ const render_loading_screen = async () => {
     });
 }
 
-const initilize = async ([environment, background, character, mask]) => {
+const initilize = async ([environment, background, _avatar, _mask]) => {
     const { renderer, scene, camera } = mindarThree;
-    avatar = character;
+    avatar = _avatar;
+    mask = _mask;
 
     // カメラ調整
     camera.position.set(2, 2, 0);
@@ -122,6 +135,10 @@ const initilize = async ([environment, background, character, mask]) => {
 
     // マウス制御
     const controls = new OrbitControls(camera, renderer.domElement);
+    
+    // クリック情報位置取得（現在未使用）
+    // raycaster = new THREE.Raycaster();
+    // renderer.domElement.addEventListener('pointerdown', click_event);
 
     // メインキャラクター
     avatar.gltf.scene.scale.set(0.7, 0.7, 0.7);
@@ -161,6 +178,19 @@ const animation_update = () => {
     }
     if (avatar.mixer) avatar.mixer.update(clock.getDelta());
     renderer.render(scene, camera);
+}
+
+// 現在未使用
+const click_event = (event) => {
+    const { renderer, scene, camera } = mindarThree;
+    const pointer = getPointerFromEvent(event, renderer);
+    const target_obj = mask.gltf.scene;
+    target_obj.updateMatrixWorld(true); 
+    raycaster.setFromCamera(pointer, camera);
+    const hit = raycaster.intersectObject(target_obj);
+    if (hit.length > 2) {
+        console.log(hit);
+    }
 }
 
 // MindAR版と同じ
