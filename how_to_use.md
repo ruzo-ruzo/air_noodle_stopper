@@ -61,7 +61,7 @@ QRコードから飛べない場合は[こちら](./index.html)へ飛んでく�
 
 ### 3. カメラがある電子機器を持っていない場合
 残念ながらあなたのお部屋に召喚する事は出来ませんが、Google Chrome 9以降、Firefox 4以降、Opera 15以降、Safari 5.1以降、Internet Explorer 11、MicrosoftEdge等であれば[このビューワー](./viewer.html)で奴を観察する事は出来ます。 
-![お座り](./images/SS_sitting.png)  
+<a href="./viewer.html">![お座り](./images/SS_sitting.png)</a>  
 マウス操作やスワイプ等で拡縮や回転が出来ます。  
 AR版だとマーカーを写さないといけない関係上見えにくい角度からも観察できますので是非ご利用ください。
 
