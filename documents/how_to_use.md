@@ -24,7 +24,7 @@
 <tr>
 <td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
-<tbody><tr style="text-align:center">
+<tbody><tr style="text-align:center background:#eee">
 <td style="width:10%"></td>
 <td style="width:80%;border:1px;background:#ccc;solid #c7c1ba">
 <div>
