@@ -96,7 +96,6 @@
 <div>ユーザー番号</div>
 </td>
 <td style="width:5%"></td>
-</tr>
 <tr style="height:10px"></tr>
 <tr>
 <td style="width:5%"></td>
@@ -109,9 +108,9 @@
 </tr>
 <tr style="height:20px"></tr></tr>
 </tbody></table>
+</td></tr>
 </tbody>
 </table>
-</td></tr>
 </tbody></table>
 
 
