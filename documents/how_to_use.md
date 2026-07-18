@@ -110,7 +110,7 @@
 </tbody></table>
 </div></td></tr>
 </tbody>
-</table>/td></tr>
+</table></td></tr>
 </tbody></table>
 
 
