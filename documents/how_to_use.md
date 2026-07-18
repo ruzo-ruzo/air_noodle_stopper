@@ -79,7 +79,7 @@
 <td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
-<td style="width:100%;background:#ffe0e6;border:1px solid #ccc">
+<td style="width:100%;background:#cca6a0;border:1px solid #ccc">
 <div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
