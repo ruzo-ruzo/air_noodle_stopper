@@ -125,9 +125,9 @@ const animation_update = () => {
 
 const get_next_action_name = (current_name) => {
     if (current_name) {
-        if ( current_name != 'Wait' ) {
-            // Wait以外のアクションは連続させずWaitを挟む
-            return 'Wait';
+        if ( current_name != 'Idle' ) {
+            // Idle以外のアクションは連続させずIdleを挟む
+            return 'Idle';
         } else {
             const hit = Math.floor(Math.random() * 6 );
             switch (hit) {
@@ -135,7 +135,7 @@ const get_next_action_name = (current_name) => {
                 case 1: return 'Talk';
                 case 2: return 'Scroll';
                 case 3: return 'Quiet';
-                default: return 'Wait';
+                default: return 'Idle';
             }
         }
     } else {
