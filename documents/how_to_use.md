@@ -16,8 +16,26 @@
 
 #### ロケッ党大集会3に参加の皆さま向け
 2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
-
 <table><tbody><tr>
+<td style="width:100%;background-color:#efefef;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
+<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
+<tbody><tr style="height:5px"></tr>
+<tr>
+<td style="width:100%;background-color:#efefef;color:#008132;text-align:center;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
+<div>ユーザー番号のお知らせ</div>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr style="height:10px"></tr>
+<tr>
+<td>
+<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
+<tbody><tr style="text-align:center">
+<td style="width:10%"></td>
+<td style="width:80%;background:#e0ffe6;border:1px solid #ccc">
+<div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
 <tr style="text-align:center">
@@ -58,8 +76,13 @@
 </ul>
 </td>
 </tr>
+</tbody></table>
+</div>
+</td>
+</tr>
 <tr style="height:20px"></tr>
 </tbody></table>
+</div>
 </td>
 <td style="width:10%"></td>
 </tr>
@@ -69,6 +92,20 @@
 <tr style="height:10px"></tr>
 <tr>
 <td align="center">
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="width:10%"></td>
+<td style="width:80%">
+<div style="font-size:14px">「ユーザー番号」を入れてプリントすることもできます。</div>
+</td>
+<td style="width:10%"></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr style="height:5px"></tr>
+<tr>
+<td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
@@ -86,6 +123,7 @@
 <tr style="height:10px"></tr>
 <tr>
 <td style="width:5%"></td>
+<td style="width:90%">
 <div style="border:1px solid #ccc;border-radius:10px;text-align:center;font-size:24px;font-weight:bold;box-sizing:border-box;color:#000;background:#eee">
 <div style="height:5px"></div>HCUJ3X68PB<div style="height:5px"></div>
 </div>
@@ -98,7 +136,8 @@
 </td>
 <td style="width:10%"></td>
 </tr>
-</tbody></table>　　
+</tbody></table>
+
 
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
