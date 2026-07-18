@@ -88,8 +88,7 @@
 <tr style="height:10px"></tr>
 <tr>
 <td style="width:5%"></td>
-<td style="width:90%">
-<div style="border:1px solid #ccc;border-radius:10px;text-align:center;font-size:24px;font-weight:bold;box-sizing:border-box;color:#000;background:#eee">
+<div style="border:1px solid #ccc;border-radius:10px;text-align:center;font-size:24px;font-weight:bold;box-sizing:border-box;color:#000;background:#222">
 <div style="height:5px"></div>HCUJ3X68PB<div style="height:5px"></div>
 </div>
 </td>
