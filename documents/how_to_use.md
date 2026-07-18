@@ -15,40 +15,9 @@
 <picture><img src="../images/target.png" width="50%"></picture>
 
 #### ロケッ党大集会3に参加の皆さま向け
+2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
+
 <table><tbody><tr>
-<td style="width:100%;background-color:#efefef;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
-<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
-<tbody><tr style="height:5px"></tr>
-<tr>
-<td style="width:100%;background-color:#efefef;color:#008132;text-align:center;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
-<div>ユーザー番号のお知らせ</div>
-</td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-<tr style="height:10px"></tr>
-<tr>
-<td align="center">
-<table border="0" align="center" cellpadding="0" cellspacing="0">
-<tbody><tr>
-<td style="width:10%"></td>
-<td style="width:80%">
-<div style="font-size:14px">お近くのファミリーマートのマルチコピー機でプリントできます。<wbr>（有料）<br>2次元コードをかざしてプリントしてください。</div>
-</td>
-<td style="width:10%"></td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-<tr style="height:5px"></tr>
-<tr>
-<td>
-<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
-<tbody><tr style="text-align:center">
-<td style="width:10%"></td>
-<td style="width:80%;background:#e0ffe6;border:1px solid #ccc">
-<div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
 <tr style="text-align:center">
@@ -105,20 +74,7 @@
 <tr style="height:10px"></tr>
 <tr>
 <td align="center">
-<table border="0" align="center" cellpadding="0" cellspacing="0">
-<tbody><tr>
-<td style="width:10%"></td>
-<td style="width:80%">
-<div style="font-size:14px">「ユーザー番号」を入れてプリントすることもできます。</div>
-</td>
-<td style="width:10%"></td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-<tr style="height:5px"></tr>
-<tr>
-<td>
+
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
@@ -149,8 +105,8 @@
 </td>
 <td style="width:10%"></td>
 </tr>
-</tbody></table>
-2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)の番号もしくはQRコードからマーカー画像を印刷できます。  
+</tbody></table>　　
+
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
 用紙の指定はありませんが、写真紙が無難だとは思います。
