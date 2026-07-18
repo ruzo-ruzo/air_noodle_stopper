@@ -60,7 +60,6 @@
 </tr>
 <tr style="height:20px"></tr>
 </tbody></table>
-</div>
 </td>
 <td style="width:10%"></td>
 </tr>
@@ -70,7 +69,6 @@
 <tr style="height:10px"></tr>
 <tr>
 <td align="center">
-
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
@@ -88,7 +86,7 @@
 <tr style="height:10px"></tr>
 <tr>
 <td style="width:5%"></td>
-<div style="border:1px solid #ccc;border-radius:10px;text-align:center;font-size:24px;font-weight:bold;box-sizing:border-box;color:#000;background:#222">
+<div style="border:1px solid #ccc;border-radius:10px;text-align:center;font-size:24px;font-weight:bold;box-sizing:border-box;color:#000;background:#eee">
 <div style="height:5px"></div>HCUJ3X68PB<div style="height:5px"></div>
 </div>
 </td>
