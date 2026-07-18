@@ -18,7 +18,7 @@
 2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
 
 
-<tr><td style="width:100%;background-color:#efefef;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
+<tr><td style="width:100%;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
 </td>
 </tr>
 <tr style="height:10px"></tr>
@@ -27,7 +27,7 @@
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
-<td style="width:80%;background:#cca6a0;border:1px solid #ccc">
+<td style="width:80%;background:#efefef;border:1px solid #ccc">
 <div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
@@ -79,7 +79,7 @@
 <td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
-<td style="width:100%;background:#c0a6a0;border:1px solid #ccc">
+<td style="width:100%;background:#efefef;border:1px solid #ccc">
 <div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
@@ -102,7 +102,7 @@
 </tbody></table>
 </div></td></tr>
 </tbody>
-</table></td></tr>
+</table></td>
 
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
