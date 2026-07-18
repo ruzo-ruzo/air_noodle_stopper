@@ -132,7 +132,7 @@
 </tr>
 <tr style="height:20px"></tr>
 </tbody></table>
-</tbody></table></tbody></table>
+</tbody></table></tbody></table></tbody></table>
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
 用紙の指定はありませんが、写真紙が無難だとは思います。
