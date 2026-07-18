@@ -16,8 +16,8 @@
 
 #### ロケッ党大集会3に参加の皆さま向け
 2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
-</tr><tr>
-<table><tbody>
+
+
 <tr><td style="width:100%;background-color:#efefef;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
 </td>
 </tr>
@@ -103,8 +103,7 @@
 </div></td></tr>
 </tbody>
 </table></td></tr>
-</tbody></table>
-</tr><tr>
+
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
 用紙の指定はありませんが、写真紙が無難だとは思います。
