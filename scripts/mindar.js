@@ -11,7 +11,7 @@ class SetGltf {
     async init() {
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath('./scripts/draco_decoder/');
-        const gltf = new Promise((resolve) => {
+        const gltf_promise = new Promise((resolve) => {
             const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
             loader.load(this.url, (gltf) => {
@@ -27,15 +27,17 @@ class SetGltf {
                         action.enabled = false;
                     });
                 }
+                // three.jsは最初のフレームで画面外にあったメッシュをその後もカリングし続けてしまうっぽいのでカリングを切る
                 gltf.scene.traverse((o)=> { o.frustumCulled = false; });
                 gltf.scene.frustumCulled = false;
                 wrapper.gltf = gltf;
                 resolve(wrapper);
             });
         });
-        return gltf;
+        return gltf_promise;
     }
 }
+
 let mindarThree = null;
 let avatar = null;
 let clock = null;

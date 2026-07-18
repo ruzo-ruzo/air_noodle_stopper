@@ -12,7 +12,7 @@ class SetGltf {
     async init() {
         const dracoLoader = new DRACOLoader();
         dracoLoader.setDecoderPath('./scripts/draco_decoder/');
-        const gltf = new Promise((resolve) => {
+        const gltf_promise = new Promise((resolve) => {
             const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
             loader.load(this.url, (gltf) => {
@@ -28,22 +28,15 @@ class SetGltf {
                         action.enabled = false;
                     });
                 }
+                // three.jsは最初のフレームで画面外にあったメッシュをその後もカリングし続けてしまうっぽいのでカリングを切る
                 gltf.scene.traverse((o)=> { o.frustumCulled = false; });
                 gltf.scene.frustumCulled = false;
                 wrapper.gltf = gltf;
                 resolve(wrapper);
             });
         });
-        return gltf;
+        return gltf_promise;
     }
-}
-
-const getPointerFromEvent = (event, renderer) => {
-    const pointer = new THREE.Vector2();
-    const rect = renderer.domElement.getBoundingClientRect();
-    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-    return pointer;
 }
 
 let mindarThree = null;
@@ -191,6 +184,15 @@ const click_event = (event) => {
     if (hit.length > 2) {
         console.log(hit);
     }
+}
+
+// 現在未使用
+const getPointerFromEvent = (event, renderer) => {
+    const pointer = new THREE.Vector2();
+    const rect = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    return pointer;
 }
 
 // MindAR版と同じ
