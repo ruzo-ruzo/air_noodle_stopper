@@ -18,14 +18,6 @@
 2026年07月30日 08時頃までにファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
 <table><tbody><tr>
 <td style="width:100%;background-color:#efefef;color:#00a040;text-align:center;border-top:1px solid #ccc;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
-<table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
-<tbody><tr style="height:5px"></tr>
-<tr>
-<td style="width:100%;background-color:#efefef;color:#008132;text-align:center;border-bottom:1px solid #ccc;font-size:24px;font-weight:bold">
-<div>ユーザー番号のお知らせ</div>
-</td>
-</tr>
-</tbody></table>
 </td>
 </tr>
 <tr style="height:10px"></tr>
@@ -117,7 +109,7 @@
 </td>
 <td style="width:5%"></td>
 </tr>
-<tr style="height:20px"></tr>
+<tr style="height:20px"></tr></tr>
 </tbody></table>
 </tbody>
 </table>
