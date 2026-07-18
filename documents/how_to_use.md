@@ -86,8 +86,7 @@
 <td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
-<td style="width:10%"></td>
-<td style="width:80%;background:#e0ffe6;border:1px solid #ccc">
+<td style="width:100%;background:#e0ffe6;border:1px solid #ccc">
 <div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
@@ -105,7 +104,6 @@
 <div style="height:5px"></div>HCUJ3X68PB<div style="height:5px"></div>
 </div>
 </td>
-<td style="width:5%"></td>
 </tr>
 <tr style="height:20px"></tr></tr>
 </tbody></table>
