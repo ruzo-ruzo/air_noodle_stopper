@@ -118,7 +118,7 @@
 <td style="width:5%"></td>
 </tr>
 <tr style="height:20px"></tr>
-</tbody></table></td></tr>
+</tbody></table>
 </tbody>
 </table>
 </td></tr>
