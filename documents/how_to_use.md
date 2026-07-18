@@ -91,26 +91,13 @@
 </tr>
 <tr style="height:10px"></tr>
 <tr>
-<td align="center">
-<table border="0" align="center" cellpadding="0" cellspacing="0">
-<tbody><tr>
-<td style="width:10%"></td>
-<td style="width:80%">
-<div style="font-size:14px">「ユーザー番号」を入れてプリントすることもできます。</div>
-</td>
-<td style="width:10%"></td>
-</tr>
-</tbody></table>
-</td>
-</tr>
-<tr style="height:5px"></tr>
-<tr>
 <td>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
 <td style="width:80%;background:#e0ffe6;border:1px solid #ccc">
-<div>
+<div></td></tr>
+
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
 <tr style="text-align:center">
@@ -132,7 +119,10 @@
 </tr>
 <tr style="height:20px"></tr>
 </tbody></table>
-</tbody></table></tbody></table></tbody></table>
+</tbody>
+</table></td></tr>
+</tbody></table>
+
 印刷の際はサイズ設定でL版をお選びください。  
 それ以外の設定は触らなくて大丈夫です。  
 用紙の指定はありませんが、写真紙が無難だとは思います。
