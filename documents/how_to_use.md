@@ -17,7 +17,7 @@
 #### ロケッ党大集会3に参加の皆さま向け
 ファミリーマートのネットプリントで[このリンク先](./netprint.html)もしくは以下のQRコードや番号からマーカー画像を印刷できます。  
 
-<tr><td style="width:100%;color:#00a040;text-align:center;border-top:1px; border-bottom:1px; font-size:24px;font-weight:bold">
+<tr><td style="width:100%;color:#00a040;text-align:center;border-top:1px; border-bottom:1px; solid:#ccc; font-size:24px;font-weight:bold">
 </td>
 </tr>
 <tr style="height:10px"></tr>
@@ -26,7 +26,7 @@
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="text-align:center">
 <td style="width:10%"></td>
-<td style="width:80%;border:1px;background:#c7c1ba;solid #ccc">
+<td style="width:80%;border:1px;background:#ccc;solid #c7c1ba">
 <div>
 <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:100%">
 <tbody><tr style="height:10px"></tr>
