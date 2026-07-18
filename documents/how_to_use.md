@@ -58,10 +58,6 @@
 </ul>
 </td>
 </tr>
-</tbody></table>
-</div>
-</td>
-</tr>
 <tr style="height:20px"></tr>
 </tbody></table>
 </div>
